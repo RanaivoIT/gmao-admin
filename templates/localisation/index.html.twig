@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block stylesheets %}
+    <!-- Custom styles for this page -->
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Localisations</h1>
+        <a href="{{ path('url_localisation_add') }}" class="d-none d-sm-inline-block btn btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-50"></i> 
+            Ajouter
+        </a>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h4 class="m-0 font-weight-bold text-primary">Liste des Localisations</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Equipement</th>
+                            <th>Site</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Etat</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        
+                        <tr>
+                            <td>1</td>
+                            <td>Equipement</td>
+                            <td>Site</td>
+                            <td>Service</td>  
+                            <td>Date</td>
+                            <td>Etat</td>  
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/datatables-demo.js"></script>
+{% endblock %}

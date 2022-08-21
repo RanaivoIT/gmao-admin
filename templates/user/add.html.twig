@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Utilisateurs</h1>
+        <a href="{{ path('url_user') }}" class="d-none d-sm-inline-block btn btn-primary shadow-sm">
+            Retour à la liste ...
+        </a>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h4 class="m-0 font-weight-bold text-primary">Nouveau Utilisateur</h4>
+        </div>
+        <div class="card-body">
+            
+            <form action="" method="post">
+
+                <div class="form-group">
+                    <label for="site">Site</label>
+                    <select id="site" name="site" class="form-control">
+                        <option value="CHU">CHU</option>
+                        <option value="CHR">CHR</option>
+                        <option value="MANARAPENITRA">MANARAPENITRA</option>
+                        <option value="DISPENSAIRE">DISPENSAIRE</option>
+                        <option value="CSB II">CSB II</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

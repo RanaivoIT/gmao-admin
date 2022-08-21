@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Sites</h1>
+        <a href="{{ path('url_site') }}" class="d-none d-sm-inline-block btn btn-primary shadow-sm">
+            Retour à la liste ...
+        </a>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h4 class="m-0 font-weight-bold text-primary">Nouveau site</h4>
+        </div>
+        <div class="card-body">
+            
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="nom">Nom du site</label>
+                    <input type="text" id="nom" name="nom" class="form-control" placeholder="Nom du site">
+                </div>
+                <div class="form-group">
+                    <label for="categorie">Catégorie du site</label>
+                    <select id="categorie" name="categorie" class="form-control">
+                        <option value="CHU">CHU</option>
+                        <option value="CHR">CHR</option>
+                        <option value="MANARAPENITRA">MANARAPENITRA</option>
+                        <option value="DISPENSAIRE">DISPENSAIRE</option>
+                        <option value="CSB II">CSB II</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

@@ -14,7 +14,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Sites</h1>
-        <a href="{{ path('url_site_add') }}" class="d-none d-sm-inline-block btn btn-primary shadow-sm">
+        <a href="{{ path('sites_add') }}" class="d-none d-sm-inline-block btn btn-primary shadow-sm">
             <i class="fas fa-plus fa-sm text-white-50"></i> 
             Ajouter
         </a>
@@ -32,20 +32,17 @@
                             <th>ID</th>
                             <th>Nom</th>
                             <th>Catégorie</th>
-                            <th>Service</th>
-                            
                         </tr>
                     </thead>
                     
                     <tbody>
-                        
+                        {% for site in sites %}
                         <tr>
-                            <td>1</td>
-                            <td>CHU Mahamasina</td>
-                            <td>CHU</td>
-                            <td>1</td>  
+                            <td>{{site.id}}</td>
+                            <td> <a href="{{ path('sites_show', {'id':site.id}) }}">{{site.nom}}</a> </td>
+                            <td>{{site.categorie}}</td> 
                         </tr>
-                        
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
